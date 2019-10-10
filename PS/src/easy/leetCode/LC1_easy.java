@@ -1,6 +1,6 @@
 package easy.leetCode;
 
-public class Solve {
+public class LC1_easy {
 
 	public static void  main(String[] args,int i) {
 		// TODO Auto-generated method stub
