@@ -20,7 +20,10 @@ public class UnionFind {
 
 	// make disjoint sets
 	public static void makeSet(int data) {
-		Node node = new Node(data);
+		Node node = new Node();
+		node.parent = node;
+		node.data = data;
+		node.rank = 0;
 		map.put(data, node);
 	}
 
@@ -56,12 +59,16 @@ public class UnionFind {
 		makeSet(0);
 		makeSet(2);
 
-		System.out.println(isConneted(2, 5));
 		Connect(5, 7);
 		Connect(4, 7);
 		Connect(0, 2);
-		System.out.println(isConneted(2, 5));
 		Connect(5, 2);
-		System.out.println(isConneted(2, 5));
+		Connect(4, 8);
+		System.out.println(findSet(5).data);
+		System.out.println(findSet(7).data);
+		System.out.println(findSet(4).data);
+		System.out.println(findSet(8).data);
+		System.out.println(findSet(0).data);
+		System.out.println(findSet(2).data);
 	}
 }
